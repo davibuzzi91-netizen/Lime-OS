@@ -1,0 +1,78 @@
+/* ===================================================================
+   Lime OS — loading.css
+   Tela de carregamento: limão gira ~2 voltas, desloca pro lado,
+   depois aparece o logo "LimeOS" (Lime = amarelo, OS = verde).
+   Dura 4 segundos (controlado em js/loading.js).
+   =================================================================== */
+
+#screen-loading {
+  background: var(--bg-black);
+}
+
+.loading-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.lemon-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Limão desenhado em CSS */
+.lemon {
+  width: 72px;
+  height: 90px;
+  background: var(--lime-yellow);
+  border-radius: 50% 50% 45% 45%;
+  position: relative;
+  transform: translateX(0) rotate(0deg);
+}
+
+.lemon-leaf {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 22px;
+  background: var(--lime-green);
+  border-radius: 0 100% 0 100%;
+}
+
+/* Classe aplicada via JS para animar a rotação (2 voltas) + deslocamento lateral */
+.lemon.spin-move {
+  transition: transform 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-70px) rotate(720deg);
+}
+
+/* Logo "LimeOS" — some por padrão, aparece depois da animação do limão */
+.lime-os-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-50% + 46px), -50%);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.lime-os-logo.visible {
+  opacity: 1;
+}
+
+.logo-lime {
+  color: var(--lime-yellow);
+}
+
+.logo-os {
+  color: var(--lime-green);
+}

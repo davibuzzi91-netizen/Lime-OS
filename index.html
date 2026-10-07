@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Lime OS</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111111">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Lime OS">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/boot.css">
+<link rel="stylesheet" href="css/loading.css">
+<link rel="stylesheet" href="css/lock.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/app-window.css">
+</head>
+<body>
+
+<!-- ===================== BOOT SCREEN ===================== -->
+<section id="screen-boot" class="screen active">
+  <div class="boot-content">
+    <h1 class="boot-title">Davi OS</h1>
+    <p class="boot-subtitle">Powered by Android</p>
+    <div class="android-robot" aria-hidden="true">
+      <div class="robot-head"></div>
+      <div class="robot-body">
+        <div class="robot-arm robot-arm-left"></div>
+        <div class="robot-torso"></div>
+        <div class="robot-arm robot-arm-right"></div>
+      </div>
+      <div class="robot-legs">
+        <div class="robot-leg"></div>
+        <div class="robot-leg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOADING SCREEN ===================== -->
+<section id="screen-loading" class="screen">
+  <div class="loading-content">
+    <div class="lemon-wrap">
+      <div id="lemon" class="lemon" aria-hidden="true">
+        <div class="lemon-leaf"></div>
+      </div>
+    </div>
+    <div id="lime-os-logo" class="lime-os-logo">
+      <span class="logo-lime">Lime</span><span class="logo-os">OS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LOCK SCREEN ===================== -->
+<section id="screen-lock" class="screen">
+  <div class="lock-content">
+    <div class="lock-clock">
+      <div id="lock-time" class="lock-time">--:--</div>
+    </div>
+
+    <div class="pin-area">
+      <div id="pin-dots" class="pin-dots">
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+      </div>
+
+      <div id="pin-pad" class="pin-pad">
+        <button class="pin-key" data-key="1">1</button>
+        <button class="pin-key" data-key="2">2</button>
+        <button class="pin-key" data-key="3">3</button>
+        <button class="pin-key" data-key="4">4</button>
+        <button class="pin-key" data-key="5">5</button>
+        <button class="pin-key" data-key="6">6</button>
+        <button class="pin-key" data-key="7">7</button>
+        <button class="pin-key" data-key="8">8</button>
+        <button class="pin-key" data-key="9">9</button>
+        <span class="pin-key pin-key-empty"></span>
+        <button class="pin-key" data-key="0">0</button>
+        <button class="pin-key pin-key-del" data-key="del">⌫</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOME SCREEN ===================== -->
+<section id="screen-home" class="screen">
+  <div class="home-content">
+    <div class="app-grid">
+      <button class="app-icon" data-app="settings">
+        <span class="app-icon-glyph">⚙️</span>
+        <span class="app-icon-label">Configurações</span>
+      </button>
+      <button class="app-icon" data-app="tester">
+        <span class="app-icon-glyph">🧪</span>
+        <span class="app-icon-label">Tester</span>
+      </button>
+      <button class="app-icon" data-app="about">
+        <span class="app-icon-glyph">ℹ️</span>
+        <span class="app-icon-label">Sobre</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== APP WINDOWS (Configurações / Tester / Sobre) ===================== -->
+<section id="app-settings" class="app-window">
+  <div class="app-window-body">
+    <p class="app-text">Em breve!</p>
+  </div>
+</section>
+
+<section id="app-tester" class="app-window">
+  <div class="app-window-body">
+    <p class="app-text">Em breve, será um testador para o administrador.</p>
+  </div>
+</section>
+
+<section id="app-about" class="app-window">
+  <div class="app-window-body app-about-body">
+    <p class="app-about-name">Lime OS 0.1</p>
+    <p class="app-about-status">Versão beta de teste</p>
+  </div>
+</section>
+
+<script src="js/boot.js"></script>
+<script src="js/loading.js"></script>
+<script src="js/lock.js"></script>
+<script src="js/home.js"></script>
+<script src="js/app-window.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

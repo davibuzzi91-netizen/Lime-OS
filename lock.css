@@ -1,0 +1,95 @@
+/* ===================================================================
+   Lime OS — lock.css
+   Tela de bloqueio: relógio simples + teclado de PIN (0000).
+   Sem barra de status, sem personalização nesta versão.
+   =================================================================== */
+
+#screen-lock {
+  background: var(--bg-black);
+}
+
+.lock-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 60px 0 40px;
+}
+
+.lock-clock {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-time {
+  font-size: 56px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--text-white);
+}
+
+.pin-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.pin-dots {
+  display: flex;
+  gap: 16px;
+}
+
+.pin-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--text-gray);
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.pin-dot.filled {
+  background: var(--text-white);
+  border-color: var(--text-white);
+}
+
+.pin-dot.error {
+  background: #E05A4E;
+  border-color: #E05A4E;
+}
+
+.pin-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 64px);
+  gap: 18px;
+}
+
+.pin-key {
+  width: 64px;
+  height: 64px;
+  font-size: 22px;
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-key:active {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.pin-key-empty {
+  background: transparent;
+}
+
+.pin-key-del {
+  font-size: 18px;
+  color: var(--text-gray);
+  background: transparent;
+}

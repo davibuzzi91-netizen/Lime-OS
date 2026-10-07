@@ -1,0 +1,66 @@
+/* ===================================================================
+   Lime OS — app-window.css
+   Animação de abertura/fechamento dos apps (Configurações, Tester, Sobre).
+   A janela nasce pequena no ponto do ícone tocado e expande até
+   ocupar a tela inteira. Ao fechar, faz o caminho inverso.
+   Bordas quadradas nesta primeira versão (--square: 0px, em base.css).
+   =================================================================== */
+
+.app-window {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-dark);
+  border-radius: var(--square);
+  z-index: 50;
+
+  display: none;
+  flex-direction: column;
+
+  /* estado inicial (fechado): pequeno, no centro da tela, invisível */
+  opacity: 0;
+  transform: scale(0.1);
+  transform-origin: 50% 50%;
+
+  transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+              opacity 0.22s ease;
+}
+
+.app-window.opening,
+.app-window.open {
+  display: flex;
+}
+
+.app-window.open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.app-window-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+}
+
+.app-text {
+  font-size: 18px;
+  color: var(--text-white);
+}
+
+.app-about-body {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.app-about-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.app-about-status {
+  font-size: 14px;
+  color: var(--text-gray);
+}
